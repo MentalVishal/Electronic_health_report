@@ -71,7 +71,7 @@ export const DetailPage = () => {
                 <Avatar size="xl" name={formData?.name} src="/avatar.jpg" />
                 <Stack spacing={4}>
                   <Text fontSize="2xl" fontWeight="bold">
-                    {formData.full_name}
+                    {formData?.name}
                   </Text>
                   <Text fontSize="lg">
                     <strong>Date of Birth:</strong> {formData?.dob}
