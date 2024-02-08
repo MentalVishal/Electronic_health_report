@@ -1,9 +1,54 @@
 import React from "react";
 import { Box, Flex, Text, Button, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
+
+  const driverObj = driver({
+    showProgress: true,
+    steps: [
+      {
+        element: "#GetStarted",
+        popover: {
+          title: "Get Started",
+          description: "Click here to moved to the Login page.",
+          side: "bottom",
+          align: "start",
+        },
+      },
+      {
+        element: "#features",
+        popover: {
+          title: "All Features",
+          description: "You can see here all the Features",
+          side: "bottom",
+          align: "start",
+        },
+      },
+      {
+        element: "#signup",
+        popover: {
+          title: "Click for Signup",
+          description: "Moved to the signup Page.",
+          side: "bottom",
+          align: "start",
+        },
+      },
+
+      {
+        popover: {
+          title: "Happy Visiting",
+          description:
+            "And that is all, go ahead and start using the applications.",
+        },
+      },
+    ],
+  });
+
+  driverObj.drive();
 
   return (
     <div>
@@ -31,6 +76,7 @@ export const LandingPage = () => {
                 intuitive platform.
               </Text>
               <Button
+                id="GetStarted"
                 colorScheme="whiteAlpha"
                 color="white"
                 px="8"
@@ -69,6 +115,7 @@ export const LandingPage = () => {
               mb={{ base: "12", lg: 0 }}
             >
               <Text
+                id="features"
                 color="teal.500"
                 fontSize={{ base: "2xl", lg: "4xl" }}
                 fontWeight="bold"
@@ -153,6 +200,7 @@ export const LandingPage = () => {
                 Sign up now to start managing your health records with ease.
               </Text>
               <Button
+                id="signup"
                 colorScheme="whiteAlpha"
                 color="teal.500"
                 background={"wheat"}

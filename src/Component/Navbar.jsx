@@ -124,21 +124,59 @@ export const Navbar = () => {
               <DrawerHeader>EHR Navigation</DrawerHeader>
               <DrawerBody>
                 <VStack spacing={4}>
-                  <Button colorScheme="teal" w="full">
+                  <Button
+                    colorScheme="teal"
+                    w="full"
+                    onClick={() => {
+                      navigate("/dashboard");
+                      onClose();
+                    }}
+                  >
                     Patient Records
                   </Button>
-                  <Button colorScheme="teal" w="full">
-                    Appointments
-                  </Button>
-                  <Button colorScheme="teal" w="full">
+                  <Button
+                    colorScheme="teal"
+                    w="full"
+                    onClick={() => {
+                      navigate("*");
+                      onClose();
+                    }}
+                  >
                     Reports
                   </Button>
-                  <Button colorScheme="teal" w="full">
+                  <Button
+                    colorScheme="teal"
+                    w="full"
+                    onClick={() => {
+                      navigate("*");
+                      onClose();
+                    }}
+                  >
                     Settings
                   </Button>
-                  <Button colorScheme="teal" w="full">
-                    Logout
-                  </Button>
+                  {isAuth ? (
+                    <Button
+                      colorScheme="teal"
+                      w="full"
+                      onClick={() => {
+                        handelLogout();
+                        onClose();
+                      }}
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <Button
+                      colorScheme="teal"
+                      w="full"
+                      onClick={() => {
+                        navigate("/login");
+                        onClose();
+                      }}
+                    >
+                      Login
+                    </Button>
+                  )}
                 </VStack>
               </DrawerBody>
             </DrawerContent>
