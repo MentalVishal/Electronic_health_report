@@ -1,54 +1,9 @@
 import React from "react";
 import { Box, Flex, Text, Button, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { driver } from "driver.js";
-import "driver.js/dist/driver.css";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
-
-  const driverObj = driver({
-    showProgress: true,
-    steps: [
-      {
-        element: "#GetStarted",
-        popover: {
-          title: "Get Started",
-          description: "Click here to moved to the Login page.",
-          side: "bottom",
-          align: "start",
-        },
-      },
-      {
-        element: "#features",
-        popover: {
-          title: "All Features",
-          description: "You can see here all the Features",
-          side: "bottom",
-          align: "start",
-        },
-      },
-      {
-        element: "#signup",
-        popover: {
-          title: "Click for Signup",
-          description: "Moved to the signup Page.",
-          side: "bottom",
-          align: "start",
-        },
-      },
-
-      {
-        popover: {
-          title: "Happy Visiting",
-          description:
-            "And that is all, go ahead and start using the applications.",
-        },
-      },
-    ],
-  });
-
-  driverObj.drive();
 
   return (
     <div>

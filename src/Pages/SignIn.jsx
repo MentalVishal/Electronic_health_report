@@ -14,8 +14,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { UserLogin } from "../Redux/UserReducer/action";
-import { driver } from "driver.js";
-import "driver.js/dist/driver.css";
 
 export const SignIn = () => {
   const [email, setEmail] = useState("admin@gmail.com");
@@ -31,32 +29,6 @@ export const SignIn = () => {
       navigate("/dashboard");
     });
   };
-
-  const driverObj = driver({
-    showProgress: true,
-    steps: [
-      {
-        element: "#create",
-        popover: {
-          title: "Create Account",
-          description: "New user can create his account.",
-          side: "bottom",
-          align: "start",
-        },
-      },
-      {
-        element: "#Admin",
-        popover: {
-          title: "Sign In",
-          description: "Click here for Login as Admin.",
-          side: "bottom",
-          align: "start",
-        },
-      },
-    ],
-  });
-
-  driverObj.drive();
 
   return (
     <Box as="section" py={[10, 16, 24]} px={[4, 6, 8]}>
